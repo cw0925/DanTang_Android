@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:id="@+id/rl_chat_title"
+    android:background="#dcdcdc"
+    android:layout_alignParentTop="true">
+    <!-- navigationItemLeftButton -->
+    <ImageView
+        android:id="@+id/iv_navi_back"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/left"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <!-- navigationItemTitle -->
+    <TextView
+        android:id="@+id/tv_navi_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="自定义NavigationBar"
+        android:textSize="15dp"/>
+
+    <!-- navigationItemRightButton -->
+    <ImageView
+        android:id="@+id/iv_navi_right"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/right"
+        android:clickable="true"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"/>
+
+</RelativeLayout>
