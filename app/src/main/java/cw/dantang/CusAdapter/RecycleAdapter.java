@@ -18,14 +18,14 @@ import cw.dantang.R;
  * Created by cw on 2017/5/2.
  */
 
-public class RecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> implements View.OnClickListener,View.OnLongClickListener {
+public class RecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>  {
     private Context mContext;
     private List<DanPinModel> data;
 
     //自定义监听事件
     public static interface OnRecyclerViewItemClickListener {
-        void onItemClick(View view);
-        void onItemLongClick(View view);
+        void onItemClick(View view,int postion);
+        void onItemLongClick(View view,int postion);
     }
     private OnRecyclerViewItemClickListener mOnItemClickListener = null;
     public void setOnItemClickListener(OnRecyclerViewItemClickListener listener) {
@@ -48,7 +48,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         View view = LayoutInflater.from(mContext
         ).inflate(R.layout.recycle_item, parent,
                 false);//这个布局就是一个imageview用来显示图片
-        view.setOnClickListener(this);
+        //view.setOnClickListener(this);
         RecycleHolder viewHolder = new RecycleHolder(view);
         return viewHolder;
     }
@@ -69,19 +69,19 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public int getItemCount() {
         return data.size();
     }
+    
 
-
-    @Override
-    public void onClick(View view) {
-        if (mOnItemClickListener != null) {
-            mOnItemClickListener.onItemClick(view);
-        }
-    }
-    @Override
-    public boolean onLongClick(View v) {
-        if (mOnItemClickListener!= null) {
-            mOnItemClickListener.onItemLongClick(v);
-        }
-        return false;
-    }
+//    @Override
+//    public void onClick(View view,int postion) {
+//        if (mOnItemClickListener != null) {
+//            mOnItemClickListener.onItemClick(view, postion);
+//        }
+//    }
+//    @Override
+//    public boolean onLongClick(View v,int postion) {
+//        if (mOnItemClickListener!= null) {
+//            mOnItemClickListener.onItemLongClick(v,postion);
+//        }
+//        return false;
+//    }
 }

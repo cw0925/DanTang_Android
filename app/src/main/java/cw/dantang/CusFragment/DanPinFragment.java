@@ -1,5 +1,6 @@
 package cw.dantang.CusFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -21,6 +22,7 @@ import java.util.List;
 
 import cw.dantang.CusAdapter.RecycleAdapter;
 import cw.dantang.CusNavigationBar.NavigationBar;
+import cw.dantang.DanPin.GoodActivity;
 import cw.dantang.Model.DanPinModel;
 import cw.dantang.R;
 import okhttp3.Call;
@@ -69,19 +71,7 @@ public class DanPinFragment extends Fragment {
                     listData.add(model);
                 }
                 if (recycleAdapter == null){
-                    recyclerView.setAdapter(recycleAdapter=new RecycleAdapter(getContext(),listData));
-                    recycleAdapter.setOnItemClickListener(new RecycleAdapter.OnRecyclerViewItemClickListener(){
-                        @Override
-                        public void onItemClick(View view) {
-                            Log.i("recycle", "onItemClick: hahahaa");
-                        }
-
-                        @Override
-                        public void onItemLongClick(View view) {
-
-                        }
-                    });
-
+                    recyclerView.setAdapter(recycleAdapter = new RecycleAdapter(getContext(),listData));
                 }else {
                     recycleAdapter.notifyDataSetChanged();
                 }
