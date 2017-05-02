@@ -68,10 +68,29 @@ public class DanPinFragment extends Fragment {
                     model.setCover_image_url(element.getString("cover_image_url"));
                     model.setName(element.getString("name"));
                     model.setPrice(element.getString("price"));
+                    model.setUrl(element.getString("url"));
+                    Log.i("url", "onItemClick: "+element.getString("url")+"*********");
                     listData.add(model);
                 }
                 if (recycleAdapter == null){
                     recyclerView.setAdapter(recycleAdapter = new RecycleAdapter(getContext(),listData));
+                    recycleAdapter.setOnItemClickListener(new RecycleAdapter.OnRecyclerViewItemClickListener() {
+                        @Override
+                        public void onItemClick(View view) {
+                            int postion = recyclerView.getChildAdapterPosition(view);
+                            DanPinModel model = listData.get(postion);
+                            Intent intent = new Intent();
+                            intent.setClass(getActivity(),GoodActivity.class);
+                            intent.putExtra("goodUrl",model.getUrl());
+                            Log.i("url", "onItemClick: "+model.getUrl());
+                            startActivity(intent);
+                        }
+
+                        @Override
+                        public void onItemLongClick(View view) {
+
+                        }
+                    });
                 }else {
                     recycleAdapter.notifyDataSetChanged();
                 }

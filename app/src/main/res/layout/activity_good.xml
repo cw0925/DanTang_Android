@@ -9,5 +9,10 @@
         android:layout_height="wrap_content">
 
     </cw.dantang.CusNavigationBar.NavigationBar>
+<WebView
+    android:id="@+id/good_web"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
+</WebView>
 </LinearLayout>
