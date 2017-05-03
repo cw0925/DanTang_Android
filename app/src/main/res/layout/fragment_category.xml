@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#9933FF">
+    android:layout_height="match_parent">
 
     <cw.dantang.CusNavigationBar.NavigationBar
         android:layout_width="match_parent"
@@ -14,9 +13,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:orientation="horizontal"
-        android:background="#3aea3f">
+        android:layout_height="40dp"
+        android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -37,8 +35,33 @@
     <com.youth.banner.Banner
         android:id="@+id/category_banner"
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="150dp">
 
     </com.youth.banner.Banner>
-    
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:text="风格"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/style_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:text="品类"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/class_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
 </LinearLayout>

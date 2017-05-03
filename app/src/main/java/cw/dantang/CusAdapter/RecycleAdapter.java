@@ -49,6 +49,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         ).inflate(R.layout.recycle_item, parent,
                 false);//这个布局就是一个imageview用来显示图片
         view.setOnClickListener(this);
+        view.setOnLongClickListener(this);
         RecycleHolder viewHolder = new RecycleHolder(view);
         return viewHolder;
     }

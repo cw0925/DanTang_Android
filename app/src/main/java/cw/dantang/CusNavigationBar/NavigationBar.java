@@ -59,10 +59,11 @@ public class NavigationBar extends RelativeLayout implements View.OnClickListene
     /**
      * 只有标题、右按钮
      */
-    public void setRigthAndTitle(String title){
+    public void setRigthAndTitle(String title,int imageID){
         tv_navi_title.setText(title);
         iv_navi_back.setVisibility(GONE);
         iv_navi_right.setVisibility(VISIBLE);
+        iv_navi_right.setBackgroundResource(imageID);
     }
     /**
      * 标题、左、右按钮都存在
